@@ -5,6 +5,7 @@ level2_root = File.join(node['stripe-ctf']['root'], '2')
 directory level2_root do
   recursive true
 end
+
 directory File.join(level2_root, 'log')
 
 directory File.join(level2_root, 'uploads') do
@@ -14,6 +15,7 @@ end
 password_file = File.join(level2_root, 'password.txt')
 template password_file do
   source "password.txt.2.erb"
+  owner 'www-data'
   mode "0200"
 end
 
