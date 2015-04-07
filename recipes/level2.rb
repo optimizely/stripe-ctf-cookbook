@@ -7,6 +7,10 @@ directory level2_root do
 end
 directory File.join(level2_root, 'log')
 
+directory File.join(level2_root, 'uploads') do
+  owner 'www-data'
+end
+
 password_file = File.join(level2_root, 'password.txt')
 template password_file do
   source "password.txt.2.erb"
