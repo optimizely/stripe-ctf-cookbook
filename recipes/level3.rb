@@ -18,4 +18,6 @@ template File.join(level3_root, 'generate_data.py') do
   source 'generate_data.py.erb'
 end
 
-execute "python #{secret_vault_file} &"
+execute "python secretvault.py" do
+  cwd level3_root
+end
