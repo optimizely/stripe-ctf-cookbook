@@ -12,4 +12,4 @@ Testing
 
 License and Authors
 -------------------
-Authors: Mike Wood: michael.woood@optimizely.com
+Authors: Mike Wood: michael.wood@optimizely.com

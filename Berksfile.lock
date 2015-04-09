@@ -1,11 +1,20 @@
 DEPENDENCIES
+  casperjs
+    git: git://github.com/jenkinslaw/casperjs-cookbook.git
+    revision: 07a3bcf263af3a0d290644cbdf3be97ed3aeb6a7
   stripe-ctf
     path: .
     metadata: true
 
 GRAPH
   build-essential (2.2.2)
+  casperjs (0.0.1)
+    git (>= 0.0.0)
+    phantomjs (>= 0.0.0)
+    ruby (>= 0.0.0)
   chef_handler (1.1.6)
+  chocolatey (0.2.0)
+    windows (~> 1.31)
   cron (1.6.1)
   dmg (2.2.2)
   git (4.1.0)
@@ -19,17 +28,23 @@ GRAPH
     build-essential (>= 0.0.0)
     git (>= 0.0.0)
     runit (>= 0.0.0)
+  phantomjs (1.0.3)
+    build-essential (>= 0.0.0)
+    chocolatey (>= 0.0.0)
   python (1.4.6)
     build-essential (>= 0.0.0)
     yum-epel (>= 0.0.0)
+  ruby (0.9.3)
   runit (1.5.18)
     build-essential (>= 0.0.0)
     yum (~> 3.0)
     yum-epel (>= 0.0.0)
   sqlite (1.1.0)
   stripe-ctf (0.1.0)
+    casperjs (>= 0.0.0)
     cron (>= 0.0.0)
     node (>= 0.0.0)
+    phantomjs (>= 0.0.0)
     python (>= 0.0.0)
     sqlite (>= 0.0.0)
   windows (1.36.6)

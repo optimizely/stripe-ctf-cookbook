@@ -1,3 +1,6 @@
+include_recipe 'phantomjs'
+include_recipe 'casperjs'
+
 package 'git'
 package 'ruby-dev'
 package 'sqlite3'
@@ -10,6 +13,11 @@ git '/tmp/stripe/' do
 end
 
 execute "cp -R /tmp/stripe/levels/4 #{node['stripe-ctf']['root']}"
+
+directory level4_root do
+  user 'vagrant'
+  mode 0755
+end
 
 template File.join(level4_root, 'password.txt') do
   source 'password.txt.4.erb'
@@ -26,6 +34,10 @@ execute 'bundle install' do
   user 'vagrant'
 end
 
-execute 'ruby srv.rb' do
+execute 'ruby srv.rb &' do
+  cwd level4_root
+end
+
+execute 'capserjs browser.coffee http://localhost:3004 &' do
   cwd level4_root
 end
