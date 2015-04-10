@@ -59,6 +59,9 @@ module KarmaTrader
     set :environment, :production
     enable :sessions
 
+    use Rack::Auth::Basic, "Restricted Area" do |username, password|
+      username == '<%= node['stripe-ctf']['user'] %>' and password == '<%= node['stripe-ctf']['level4']['password'] %>'
+    end
     # Use persistent entropy file
     entropy_file = 'entropy.dat'
     unless File.exists?(entropy_file)
