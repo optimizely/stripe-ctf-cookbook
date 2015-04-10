@@ -30,9 +30,7 @@ The levels aren't 100% setup via the chef run. Often you'll have to start the se
 
 All level run on port 300x, where 'x' is the level number
 
-Testing
-------------
-`kitchen converge`
+Running `kitchen converge` will create a vagrant at `.kitchen/kitchen-vagrant/default-ubuntu-1404/`. Ports are forwarded to localhost
 
 TODO
 -----------

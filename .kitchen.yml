@@ -13,6 +13,15 @@ platforms:
       box_url: 'https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box'
       network:
         - ["private_network", {ip: "192.168.33.36"}]
+        - ["forwarded_port", {guest: 3000, host: 3000}]
+        - ["forwarded_port", {guest: 3001, host: 3001}]
+        - ["forwarded_port", {guest: 3002, host: 3002}]
+        - ["forwarded_port", {guest: 3003, host: 3003}]
+        - ["forwarded_port", {guest: 3004, host: 3004}]
+        - ["forwarded_port", {guest: 3005, host: 3005}]
+        - ["forwarded_port", {guest: 3006, host: 3006}]
+        - ["forwarded_port", {guest: 3007, host: 3007}]
+        - ["forwarded_port", {guest: 3008, host: 3008}]
 
 suites:
   - name: default
