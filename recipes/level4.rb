@@ -24,7 +24,7 @@ template File.join(level4_root, 'password.txt') do
 end
 
 template File.join(level4_root, 'srv.rb') do
-  source 'srv.rb.erb'
+  source 'srv.rb.4.erb'
 end
 
 gem_package 'bundler'
