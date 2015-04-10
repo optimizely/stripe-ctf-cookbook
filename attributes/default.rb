@@ -1,4 +1,4 @@
-default['stripe-ctf']['levels'] = ['1', '2', '3', '4', '5', '6']
+default['stripe-ctf']['levels'] = ['1', '2', '3', '4', '5', '6', '7']
 
 default['stripe-ctf']['root'] = '/opt/stripe-ctf'
 

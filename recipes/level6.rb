@@ -19,12 +19,18 @@ directory level6_root do
   mode 0755
 end
 
-template File.join(level6_root, 'password.txt') do
-  source 'password.txt.6.erb'
-end
-
 template File.join(level6_root, 'srv.rb') do
   source 'srv.rb.6.erb'
+end
+
+level6_karma_root = File.join(level6_root, 'public_html')
+
+directory level6_karma_root do
+  owner 'vagrant'
+end
+
+template File.join(level6_karma_root, 'password.txt') do
+  source 'password.txt.6.erb'
 end
 
 gem_package 'bundler'
@@ -32,5 +38,10 @@ gem_package 'bundler'
 execute 'bundle install' do
   cwd level6_root
   user 'vagrant'
+end
+
+cron_d 'level6_karma_bot' do
+  minute  '*'
+  command "casperjs #{File.join(level6_root, 'browser.coffee')} http://localhost:3006"
 end
 

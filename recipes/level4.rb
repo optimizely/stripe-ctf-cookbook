@@ -38,6 +38,9 @@ execute 'ruby srv.rb &' do
   cwd level4_root
 end
 
-execute 'capserjs browser.coffee http://localhost:3004 &' do
-  cwd level4_root
+cron_d 'level4_karma_bot' do
+  minute  '*'
+  command "casperjs #{File.join(level4_root, 'browser.coffee')} http://localhost:3004"
 end
+
+
